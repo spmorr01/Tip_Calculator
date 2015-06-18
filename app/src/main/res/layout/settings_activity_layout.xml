@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:background="#ff000000">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:text="Default Settings"
+        android:id="@+id/defaultTextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#ffffa82a"
+        android:textSize="40sp"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tip Percentage:"
+        android:id="@+id/defaultTipTextView"
+        android:textColor="#ffffa82a"
+        android:gravity="left|center"
+        android:layout_alignTop="@+id/defaultTipEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Split Amount:"
+        android:id="@+id/defaultSplitTextView"
+        android:textColor="#ffffa82a"
+        android:gravity="center|start"
+        android:layout_marginTop="75dp"
+        android:layout_below="@+id/defaultTipEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/defaultTipEditText"
+        android:editable="true"
+        android:gravity="start"
+        android:textColor="#ffffa82a"
+        android:textSize="24sp"
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/defaultTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="$"
+        android:id="@+id/defaultDollarSign"
+        android:gravity="center|right"
+        android:textSize="24sp"
+        android:textColor="#ffffa82a"
+        android:layout_alignTop="@+id/defaultTipTextView"
+        android:layout_toLeftOf="@+id/defaultTipEditText"
+        android:layout_toStartOf="@+id/defaultTipEditText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="%"
+        android:id="@+id/defaultPercentSign"
+        android:gravity="center|right"
+        android:textSize="24sp"
+        android:textColor="#ffffa82a"
+        android:layout_alignTop="@+id/defaultSplitTextView"
+        android:layout_toRightOf="@+id/defaultSplitEditText"
+        android:layout_toEndOf="@+id/defaultSplitEditText" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/defaultSplitEditText"
+        android:editable="true"
+        android:gravity="bottom|end"
+        android:textColor="#ffffa82a"
+        android:textSize="24sp"
+        android:layout_alignTop="@+id/defaultPercentSign"
+        android:layout_alignLeft="@+id/defaultTipEditText"
+        android:layout_alignStart="@+id/defaultTipEditText" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/saveSettingsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:gravity="center"
+        android:onClick="onSettingsButtonClick" />
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ffffa82a">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Tip"
+        android:id="@+id/calculateButton"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:background="@color/button_material_dark"
+        android:clickable="true"
+        android:textColor="@color/primary_material_light"
+        android:onClick="onButtonClick"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignTop="@+id/resetButton"
+        android:layout_toLeftOf="@+id/splitEditText"
+        android:layout_toStartOf="@+id/splitEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/resetButton"
+        android:textColor="@color/primary_material_light"
+        android:background="@color/button_material_dark"
+        android:clickable="true"
+        android:onClick="onResetButtonClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Enter the check amount:"
+        android:id="@+id/checkTextView"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="5"
+        android:id="@+id/checkEditText"
+        android:editable="true"
+        android:textSize="24sp"
+        android:layout_below="@+id/checkTextView"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:numeric="decimal" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Percent you want to tip:"
+        android:id="@+id/percentageTextView"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/checkEditText"
+        android:layout_alignLeft="@+id/checkTextView"
+        android:layout_alignStart="@+id/checkTextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="5"
+        android:id="@+id/percentageEditText"
+        android:editable="true"
+        android:textSize="24sp"
+        android:layout_below="@+id/percentageTextView"
+        android:layout_alignLeft="@+id/checkEditText"
+        android:layout_alignStart="@+id/checkEditText"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:text="How many ways to split the tip:"
+        android:id="@+id/splitTextView"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/percentageEditText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:id="@+id/splitEditText"
+        android:editable="true"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_below="@+id/splitTextView"
+        android:layout_alignLeft="@+id/percentageEditText"
+        android:layout_alignStart="@+id/percentageEditText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Total:"
+        android:id="@+id/totalTextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/splitEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tipTotalTextView"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/totalTextView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$"
+        android:id="@+id/dollarSignTextView"
+        android:textAlignment="viewEnd"
+        android:layout_below="@+id/checkTextView"
+        android:layout_toLeftOf="@+id/checkEditText"
+        android:layout_toStartOf="@+id/checkEditText"
+        android:singleLine="true"
+        android:gravity="end"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="%"
+        android:id="@+id/percentSignTextView"
+        android:layout_alignTop="@+id/percentageEditText"
+        android:layout_toRightOf="@+id/percentageEditText"
+        android:layout_toEndOf="@+id/percentageEditText"
+        android:textSize="24sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SETTINGS"
+        android:id="@+id/settingsButton"
+        android:textAlignment="center"
+        android:background="@color/button_material_dark"
+        android:textColor="@color/primary_material_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/percentSignTextView"
+        android:layout_alignStart="@+id/percentSignTextView"
+        android:onClick="onSettingsButtonClick" />
+
+</RelativeLayout>
