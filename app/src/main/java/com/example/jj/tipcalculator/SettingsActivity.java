@@ -1,8 +1,8 @@
 package com.example.jj.tipcalculator;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
@@ -14,9 +14,14 @@ import java.text.NumberFormat;
 /**
  * Created by jj on 6/11/15.
  */
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends PreferenceActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.layout.preferences);
+    }
 
-    NumberFormat decimalFormat;
+    /*NumberFormat decimalFormat;
     TextView defaultTextView;
     TextView defaultTipView;
     TextView dollarSign;
@@ -71,4 +76,5 @@ public class SettingsActivity extends Activity {
 
     finish();
     }
+*/
 }
