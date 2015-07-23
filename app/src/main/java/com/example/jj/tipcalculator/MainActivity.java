@@ -57,10 +57,10 @@ public class MainActivity extends ActionBarActivity {
         totalTipLineView.setText(null);
     }
 
-    public void onSettingsButtonClick(View v){
+    /*public void onSettingsButtonClick(View v){
         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(intent);
-    }
+    }*/
 
 
 
@@ -77,10 +77,11 @@ public class MainActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()){
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+            case R.id.action_settings:
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
